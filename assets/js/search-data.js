@@ -442,9 +442,9 @@ ninja.data = [{
           description: "process isolation using kernel function",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
-            },},{id: "projects-project-2",
-          title: 'project 2',
-          description: "a project with a background image and giscus comments",
+            },},{id: "projects-mesh-messenger",
+          title: 'Mesh Messenger',
+          description: "point to point messenger using Bluetooth",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
             },},{id: "projects-project-3-with-very-long-name",
