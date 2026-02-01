@@ -1,18 +1,14 @@
 ---
 layout: page
-title: project 1
-description: with background image
-img: assets/img/12.jpg
+title: eBPF Sandbox
+description: process isolation using kernel function
+img: assets/img/ebpf.png
 importance: 1
 category: work
 related_publications: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
-
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+Sandboxing is a process isolation technique that employs containers as streamlined, segregated environments. These containers encapsulate a program's execution along with only the essential resources required, ensuring complete compartmentalization. This setup allows each container to function independently, separate from both the host system and other containers. Essentially, sandboxing can be viewed as a form of virtualization, albeit without the need for specialized hardware or a hypervisor.
 
     ---
     layout: page
@@ -33,7 +29,15 @@ To give your project a background in the portfolio page, just add the img tag to
     </div>
 </div>
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
+To understand eBPF it is important to see why it was invented. Linux began integrating advanced security and resource management features in kernel 2.x, including namespaces, root capabilities, control groups (cgroups), pivot root, and mandatory access control (MAC). These features enhanced process isolation, resource management, and system security, laying the foundation for modern containerization and virtualization technologies.
+
+Kernel namespaces, introduced around kernel 2.6.19, abstract system-wide resources into isolated layers. Processes within a namespace perceive unique versions of resources like the processor, while changes remain hidden from others outside. This is widely used in containers and virtualization to ensure separation and compartmentalization.
+
+Root capabilities evolved from traditional Unix privilege models, where root (UID 0) had unrestricted access. Starting with kernel 2.2, root privileges were refined into capabilities, breaking them into granular levels. This allowed specific permissions to be assigned to processes, enhancing security by limiting excessive access.
+
+Control groups (cgroups), developed by Google engineers, organize processes hierarchically. They enable resource restrictions and monitoring, such as CPU, memory, disk, and I/O limits, without the application’s awareness. This ensures efficient resource allocation and prevents processes from overusing system resources.
+
+Pivot root allows users with specific capabilities to change the root mount point in a containerized environment. MAC enforces stricter access rules than DAC, granting resources only with explicit authorization. For example, a webserver might access only port 80 and specific folders, enhancing system security and resource control.
 </div>
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
